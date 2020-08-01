@@ -39,7 +39,7 @@ class ShopController {
             "name": book.title,
             "sku": book.sku,
             "price": book.price,
-            "currency": book.price,
+            "currency": book.currency,
             "quantity": 1
           }]
         },

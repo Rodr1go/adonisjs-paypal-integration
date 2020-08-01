@@ -11,7 +11,7 @@ class PaypalController {
   }
 
   getErrorURL() {
-    return Config.get('paypal.urel_error');
+    return Config.get('paypal.url_error');
   }
 
   createPay(payment) {
