@@ -1,0 +1,73 @@
+<DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AdonisJS Paypal integration</title>
+    {{ style('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css') }}
+    {{ style('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css')}}
+    <style>
+      .book-title,
+      .book-author,
+      .book-description {
+        text-align: center;
+      }
+      .book-image {
+        width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="{{ route('book.index') }}">
+        <img src="/logo.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+        Loja de livros
+      </a>
+    </nav>
+    <div class="container pt-3">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          @if(flashMessage('notification_message'))
+            <div class="alert 
+                {{ flashMessage('notification_class') }}"
+                role="alert">
+              <i class="fa {{ flashMessage('notification_icon') }}"></i>
+              {{ flashMessage('notification_message') }}
+            </div>
+          @endif
+          <div class="card-body d-flex flex-column">
+            <strong class="book.title d-inline-block mb-3 text-primary">
+              {{ book.sku }} - {{ book.title }}
+            </strong>
+            <div class="book-author text-muted small pb-4">
+              Por {{ book.author }}
+            </div>
+            <p class="book-description mb-auto alig-center">
+              {{ book.description }}
+            </p>
+            @if(paymentId)
+              <a href="{{ route('book.download') }}?paymentId={{paymentId}}" class="btn btn-outline-success" role="button">
+                <i class="fa fa-cloud-download"></i>
+                Download PDF
+              </a>
+            @else
+              <a href="{{ route('book.pay') }}" class="btn btn-outline-primary mt-3" role="button">
+                <i class="fa fa-credit-card"></i>
+                Compre por apenas R$ {{ book.price }} {{ book.currency }}
+              </a>
+            @endif
+          </div>
+          <img src="{{ book.image }}" class="book-image card-img-right flex-auto d-nome d-lg-block" alt="Livro[200x250]">
+        </div>
+        @if(paymentId)
+          <div class="text-center pt-3">
+            <a href="{{ route('book.index') }}" class="btn btn-outline-dark">
+              <i class="fa fa-home"></i>
+              Início
+            </a>  
+          </div>
+        @endif 
+      </div>
+    </div>
+  </body>
+</html>
