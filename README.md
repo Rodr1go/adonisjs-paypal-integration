@@ -10,22 +10,24 @@ This application is configured with:
 6. Edge template engine
 7. Lucid ORM
 8. Migrations and seeds
+9. Paypal Rest SDK
 
 ## Setup
-
-Use the adonis command to install the blueprint
-
 ```bash
-adonis new yardstick
-```
+Clone the repo.
 
-or manually clone the repo and then run `npm install`.
+# install dependencies
+npm install
 
+# create env file
+cp .env.example .env
 
-### Migrations
+# generate app key
+adonis key:generate
 
-Run the following command to run startup migrations.
+# edit configs
+nano .env
 
-```js
-adonis migration:run
+# start server
+adonis serve --dev
 ```

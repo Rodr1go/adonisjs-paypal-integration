@@ -1,8 +1,8 @@
 {
-  "name": "adonis-fullstack-app",
+  "name": "adonis-paypal-integration",
   "version": "4.1.0",
   "adonis-version": "4.1.0",
-  "description": "The fullstack application boilerplate for Adonisjs",
+  "description": "Adonisjs Paypal integration",
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
@@ -12,7 +12,7 @@
     "adonisjs",
     "adonis-app"
   ],
-  "author": "",
+  "author": "Rodrigo Santos",
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
