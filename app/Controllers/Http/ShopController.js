@@ -6,9 +6,9 @@ const Paypal = new PaypalController();
 
 const book = {
   sku: 'B001',
-  title: 'Aprenda desenvolver seus frontends com React',
-  image: 'https://peerbits-wpengine.netdna-ssl.com/wp-content/uploads/2019/09/the-benefits-of-reactjs-main.jpg',
-  description: 'Aprenda React do jeito certo.',
+  title: 'Aprenda React do jeito certo',
+  image: '/ebook-react.png',
+  description: 'Aprenda particando.',
   author: 'Rodrigo Santos',
   price: 50.0,
   currency: 'BRL'
@@ -106,11 +106,11 @@ class ShopController {
     const paymentId = request.input('paymentId');
     await Paypal.getPay(paymentId)
       .then((payment) => {
-        const item = payment.transaction[0].item_list.items[0];
+        const item = payment.transactions[0].item_list.items[0];
         //Download book
         const name = item.sku + ' - ' + item.name + '.pdf';
         const source = Helpers.resourcesPath('/files/Book-' + item.sku + '.pdf');
-        
+        console.log(source);
         response.attachment(source, name);
       })
       // Indicates that the payment does not exist
