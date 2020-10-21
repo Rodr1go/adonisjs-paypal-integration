@@ -12,6 +12,10 @@ This application is configured with:
 8. Migrations and seeds
 9. Paypal Rest SDK
 
+**The Running application:**
+
+![Funcionamento](/public/adonis-paypal.gif)
+
 ## Setup
 ```bash
 Clone the repo.
@@ -32,7 +36,3 @@ nano .env
 adonis serve --dev
 ```
 
-
-**The Running application:**
-
-![Em funcionamento](https://lh3.googleusercontent.com/pw/ACtC-3eo_Q5lgZjY5rpAugXRniCWvebHNL8nkQkv1Lf9xo4jC8Rj4QrRMV3_2h7023orGOatDT_x-CPUZsEdt9lltKDSEGBcaYge_PFRRZkRpu8HU_1YBrkJO_qR9jud9zRukMolg_S_bMWeh1MorG0CG7M0=w1167-h656-no?authuser=0 "Em funcionamento")
